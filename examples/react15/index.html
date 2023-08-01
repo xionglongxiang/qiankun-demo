@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+
+<body>
+  <div id="react15Root"></div>
+</body>
+<script>
+  const { removeChild } = HTMLElement.prototype;
+  HTMLElement.prototype.removeChild = function (node) {
+  if (this.contains(node)) {
+    removeChild.call(this, node)
+  }
+  return node
+}
+</script>
+</html>
